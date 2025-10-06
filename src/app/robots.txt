@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# Mets à jour cette URL après déploiement
+Sitemap: https://pdlc.vercel.app/sitemap.xml
