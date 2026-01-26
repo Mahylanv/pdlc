@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useRef, useState, type CSSProperties } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { touchPlayers, savePlayers } from "@/lib/playerStore";
-import { loadSelectedCats, type CatKey } from "@/lib/categories";
+import { loadSelectedCats, saveSelectedCats, type CatKey } from "@/lib/categories";
 
 type Player = { id: string; name: string; order: number };
 type Cat = { key: string; name: string; color: string };
@@ -51,6 +51,7 @@ function PlayInner() {
   const [cats, setCats] = useState<Cat[]>([]);
   const [progress, setProgress] = useState(INITIAL_PROGRESS);
   const [loading, setLoading] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   // Drawer joueurs
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -132,6 +133,7 @@ function PlayInner() {
     if (json.card?.text) setCard(json.card.text);
     setAnswer(json.card?.answer ?? null);
     setAnswerNote(json.card?.answerNote ?? null);
+    setShowAnswer(false);
     setCats(json.card?.categories ?? []);
     setShowEnd(finished);
     return { played, finished };
@@ -158,6 +160,11 @@ function PlayInner() {
     const now = Date.now();
     if (now - tapBlock.current < 300) return;
     tapBlock.current = now;
+
+    if ((answer || answerNote) && !showAnswer) {
+      setShowAnswer(true);
+      return;
+    }
 
     setLoading(true);
     try {
@@ -221,6 +228,7 @@ function PlayInner() {
       savePlayers(players.map((p) => p.name));
       touchPlayers();
     }
+    saveSelectedCats(selectedCats);
     try {
       await fetch("/api/game/delete", {
         method: "POST",
@@ -241,6 +249,7 @@ function PlayInner() {
       setCats(preload.cats || []);
       setAnswer(preload.answer ?? null);
       setAnswerNote(preload.answerNote ?? null);
+      setShowAnswer(false);
       setProgress(preload.progress);
       setShowEnd(preload.progress.finished);
       void prefetchToTarget(
@@ -267,13 +276,27 @@ function PlayInner() {
         savePlayers(list.map((p) => p.name));
         touchPlayers();
       }
+      saveSelectedCats(selectedCats);
     };
     window.addEventListener("beforeunload", handleBeforeUnload);
-    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
-  }, []);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      const list = playersRef.current;
+      if (list.length > 0) {
+        savePlayers(list.map((p) => p.name));
+        touchPlayers();
+      }
+      saveSelectedCats(selectedCats);
+    };
+  }, [selectedCats]);
 
   // Couleur de fond = 1ère catégorie si dispo
-  const bg = cats[0]?.color || "#000000";
+  let bg = cats[0]?.color || "#000000";
+  if (showAnswer && (answerNote ?? "").toLowerCase().includes("fond rouge")) {
+    bg = "#4b0f18";
+  } else if (showAnswer && (answerNote ?? "").toLowerCase().includes("fond noir")) {
+    bg = "#070707";
+  }
 
   return (
     <main
@@ -296,7 +319,21 @@ function PlayInner() {
 
       <div className="game-content w-full max-w-4xl text-center">
         <div className="flex items-center justify-between mb-3 text-sm text-white/90 uppercase tracking-widest">
-          <div className="flex gap-2">
+          <div
+            className="flex-1 min-w-0 flex gap-2 overflow-x-auto whitespace-nowrap pb-1 pr-2"
+            style={{ touchAction: "pan-x" }}
+            onPointerDown={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {cats.map((c) => (
+              <span
+                key={c.key}
+                className="badge-chip px-2 py-0.5 rounded-full text-xs shrink-0"
+                style={{ background: "#00000030" }}
+              >
+                {c.name}
+              </span>
+            ))}
           </div>
           <span>{progress.played}/{progress.total}</span>
         </div>
@@ -305,14 +342,10 @@ function PlayInner() {
           <div className="text-sm text-white/60 mb-2 font-display">
             {cats[0]?.name ?? "Catégorie"}
           </div>
-          {card || "Lancement de la partie"}
-          {(answer || answerNote) && !progress.finished && (
-            <div className="mt-4 text-left text-white/90">
-              <details>
-                <summary className="cursor-pointer underline">Afficher la réponse / complément</summary>
-                {answer && <p className="mt-2"><span className="opacity-80">Réponse :</span> {answer}</p>}
-                {answerNote && <p className="mt-1 opacity-90">{answerNote}</p>}
-              </details>
+          {!showAnswer ? (card || "Lancement de la partie") : (
+            <div className="text-left">
+              {answer && <p><span className="opacity-80">Réponse :</span> {answer}</p>}
+              {answerNote && <p className="mt-2 opacity-90">{answerNote}</p>}
             </div>
           )}
         </div>

@@ -28,6 +28,19 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true, finished: true, played: playedCount, total: MAX_ROUNDS, remaining: 0 });
     }
 
+    const playedChains = await prisma.round.findMany({
+      where: { gameId: game.id },
+      select: { card: { select: { chainGroup: true, chainOrder: true } } },
+    });
+    const activeChainGroups = Array.from(
+      new Set(
+        playedChains
+          .map((r) => r.card)
+          .filter((c) => c.chainGroup && (c.chainOrder ?? 0) <= 1)
+          .map((c) => c.chainGroup as string)
+      )
+    );
+
     const catFilter = cats.length ? cats : null;
     const rows = await prisma.$queryRaw<{ id: string }[]>(Prisma.sql`
       SELECT c.id
@@ -35,6 +48,14 @@ export async function POST(req: Request) {
       WHERE NOT EXISTS (
         SELECT 1 FROM "Round" r
         WHERE r."gameId" = ${game.id} AND r."cardId" = c.id
+      )
+      AND (
+        c."chainOrder" IS NULL
+        OR c."chainOrder" <= 1
+        ${activeChainGroups.length ? Prisma.sql`OR (
+          c."chainOrder" > 1
+          AND c."chainGroup" = ANY(${activeChainGroups})
+        )` : Prisma.empty}
       )
       ${catFilter ? Prisma.sql`AND EXISTS (
         SELECT 1 FROM "_CardToCategory" cc
@@ -59,6 +80,23 @@ export async function POST(req: Request) {
     }
 
     const rendered = renderCardText(card.text, game.players);
+
+    let dynamicAnswer: { answer?: string | null; answerNote?: string | null } = {};
+    if (card.chainGroup && card.chainOrder === 1) {
+      const options = await prisma.card.findMany({
+        where: { chainGroup: card.chainGroup, chainOrder: { gt: 1 } },
+        select: { text: true, answerNote: true, chainOrder: true },
+      });
+      if (options.length > 0) {
+        const pick = card.chainGroup === "chaussettes"
+          ? options.sort((a, b) => (a.chainOrder ?? 0) - (b.chainOrder ?? 0))[0]
+          : options[Math.floor(Math.random() * options.length)];
+        dynamicAnswer = {
+          answer: renderCardText(pick.text, game.players),
+          answerNote: pick.answerNote ? renderCardText(pick.answerNote, game.players) : null,
+        };
+      }
+    }
 
     await prisma.round.create({
       data: {
@@ -89,8 +127,8 @@ export async function POST(req: Request) {
         slug: card.slug,
         text: rendered,
         level: card.level,
-        answer: card.answer ?? null,
-        answerNote: card.answerNote ?? null,
+        answer: dynamicAnswer.answer ?? (card.answer ? renderCardText(card.answer, game.players) : null),
+        answerNote: dynamicAnswer.answerNote ?? (card.answerNote ? renderCardText(card.answerNote, game.players) : null),
         categories: card.categories.map(c => ({ key: c.key, name: c.name, color: c.color })),
       },
     });

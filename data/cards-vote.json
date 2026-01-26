@@ -41,11 +41,12 @@
     },
     {
         "slug": "vote-grossophobe-ou-raciste",
-        "text": "Plutôt grossophobe (haut) ou raciste (bas) ? Les perdants boivent 1, ceux qui n’ont pas voté 3.",
+        "text": "Plutôt grossophobe (haut) ou raciste (bas) ? Les perdants boivent 1.",
         "level": 2,
         "categories": [
             "vote"
-        ]
+        ],
+        "answer": "Ceux qui n'ont pas voté boivent 3."
     },
     {
         "slug": "vote-repond-tard-aux-messages",

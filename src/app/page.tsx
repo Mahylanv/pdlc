@@ -14,18 +14,24 @@ export default function Home() {
   const [selectedCats, setSelectedCats] = useState<CatKey[]>([]);
   const [showCats, setShowCats] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const didInit = useRef(false);
+  const didInitPlayers = useRef(false);
+  const didInitCats = useRef(false);
   const router = useRouter();
 
   useEffect(() => {
     setPlayers(loadPlayers());
     touchPlayers();
     setSelectedCats(loadSelectedCats()); // CatKey[]
-    didInit.current = true;
   }, []);
 
-  useEffect(() => { if (didInit.current) savePlayers(players); }, [players]);
-  useEffect(() => { if (didInit.current) saveSelectedCats(selectedCats); }, [selectedCats]);
+  useEffect(() => {
+    if (!didInitPlayers.current) { didInitPlayers.current = true; return; }
+    savePlayers(players);
+  }, [players]);
+  useEffect(() => {
+    if (!didInitCats.current) { didInitCats.current = true; return; }
+    saveSelectedCats(selectedCats);
+  }, [selectedCats]);
 
   const canStart = useMemo(() => players.length >= 1, [players]);
 
@@ -88,17 +94,15 @@ export default function Home() {
               >
                 <Settings className="w-5 h-5" />
               </button>
-              {showCats && (
-                <div className="absolute left-0 top-full">
-                  <CategoryMenu
-                    selected={selectedCats}
-                    onToggle={toggleCat}
-                    onAll={selectAll}
-                    onNone={selectNone}
-                    onClose={() => setShowCats(false)}
-                  />
-                </div>
-              )}
+            {showCats && (
+              <CategoryMenu
+                selected={selectedCats}
+                onToggle={toggleCat}
+                onAll={selectAll}
+                onNone={selectNone}
+                onClose={() => setShowCats(false)}
+              />
+            )}
             </div>
 
             {/* Champ joueur + bouton ajouter */}

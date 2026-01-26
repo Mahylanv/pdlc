@@ -31,6 +31,8 @@ model Card {
   level      Int        @default(1)
   answer     String?
   answerNote String?
+  chainGroup String?
+  chainOrder Int?
   categories Category[]
   rounds     Round[]
   createdAt  DateTime   @default(now())

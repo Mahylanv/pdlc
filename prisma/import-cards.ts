@@ -14,6 +14,8 @@ type CardIn = {
   categories?: string[];   // ex: ["mort_subite","tour"]
   answer?: string | null;
   answerNote?: string | null;
+  chainGroup?: string | null;
+  chainOrder?: number | null;
 };
 
 function normalizeCategoryKey(raw: string) {
@@ -53,6 +55,8 @@ async function importFile(jsonPath: string) {
           level: c.level ?? existing.level ?? 1,
           answer: c.answer ?? null,
           answerNote: c.answerNote ?? null,
+          chainGroup: c.chainGroup ?? null,
+          chainOrder: c.chainOrder ?? null,
           // on remplace l’affectation des catégories
           categories: { set: [], connect },
         },
@@ -66,6 +70,8 @@ async function importFile(jsonPath: string) {
           level: c.level ?? 1,
           answer: c.answer ?? null,
           answerNote: c.answerNote ?? null,
+          chainGroup: c.chainGroup ?? null,
+          chainOrder: c.chainOrder ?? null,
           categories: { connect },
         },
       });

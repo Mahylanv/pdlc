@@ -1,0 +1,550 @@
+[
+    {
+        "slug": "os-plus-long",
+        "text": "{player}, quel est l'os le plus long du corps humain ? 1 gorgée si t'as faux",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "Le fémur"
+    },
+    {
+        "slug": "arbre-kakis",
+        "text": "{player}, quel est l'arbre qui donne des kakis ? 1 gorgée si t'as faux",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "Le plaqueminier (diospyros kaki)"
+    },
+    {
+        "slug": "muscle-plus-puissant",
+        "text": "{player}, quel est le muscle le plus puissant du corps humain ? 1 gorgée si t'as faux",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "Le masséter (mâchoire)"
+    },
+    {
+        "slug": "animal-terrestre-plus-grand",
+        "text": "{player}, quel est l'animal terrestre le plus grand du monde ? 2 gorgées si t'as faux",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "La girafe"
+    },
+    {
+        "slug": "plus-petit-muscle-ou",
+        "text": "{player}, où se trouve le plus petit muscle du corps humain ? 1 gorgée si t'as faux",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "Dans l’oreille (muscle de l’étrier / stapédien)"
+    },
+    {
+        "slug": "date-pearl-harbor",
+        "text": "{player}, quelle est la date de Pearl Harbor ? (faire appel à un ami pour 2 gorgées)",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "7 décembre 1941"
+    },
+    {
+        "slug": "presidents-francais",
+        "text": "{player}, cite autant de présidents français que tu peux et donne ces gorgées",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "generaux-guerre",
+        "text": "{player}, distribue autant de gorgées que tu citeras de généraux de guerre",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "clubs-ben-arfa",
+        "text": "{player}, distribue autant de gorgées que tu citeras de clubs où Hatem Ben Arfa est passé",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "stades-ligue1",
+        "text": "{player}, distribue autant de gorgées que tu citeras de stades de Ligue 1",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "sept-merveilles",
+        "text": "{player}, cite les 7 merveilles du monde",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "trois-mots-3s",
+        "text": "{player}, donne 3 mots qui n'ont rien à voir en 3 secondes",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "devine-joueur",
+        "text": "{player}, ferme les yeux ; les autres désignent quelqu’un en silence : si tu le devines, distribue 2, sinon tu bois 2",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "guerre-cent-ans",
+        "text": "{player}, quelles sont les dates de la guerre de Cent Ans ? 2 gorgées si t'as faux",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "1337–1453"
+    },
+    {
+        "slug": "louis-combien",
+        "text": "{player}, si la France était une monarchie : à Louis combien serions-nous ? 4 si tu sais pas (appel ami = 2)",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answerNote": "Réponse discutable selon décomptes, accepte une explication raisonnable."
+    },
+    {
+        "slug": "palindrome",
+        "text": "{player}, qu'est-ce qu’un palindrome ? 4 si tu sais pas (appel ami = 2)",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "Un mot/phrase qui se lit dans les deux sens (ex: kayak)"
+    },
+    {
+        "slug": "drapeaux-rose",
+        "text": "{player}, nomme 2 drapeaux avec du rose dessus sinon bois 2",
+        "level": 3,
+        "categories": [
+            "un_joueur"
+        ],
+        "answerNote": "Ex: Monaco? (rouge), Mexique (rose non officiel) — carte volontairement piégeuse."
+    },
+    {
+        "slug": "iles",
+        "text": "{player}, donne autant de gorgées que tu citeras d’îles",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "pi-decimales",
+        "text": "{player}, donne autant de gorgées que tu citeras de décimales de π",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "empereurs-romains",
+        "text": "{player}, donne autant de gorgées que tu citeras d’empereurs romains",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "services-renseignement",
+        "text": "{player}, donne autant de gorgées que tu citeras de services de renseignement dans le monde",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "donne-un-shot",
+        "text": "{player}, donne un shot à qui tu veux",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "enleve-2-ou-cul-sec",
+        "text": "{player}, enlève 2 vêtements ou cul sec",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ],
+        "chainGroup": "chaussettes",
+        "chainOrder": 1
+    },
+    {
+        "slug": "chaussettes-cul-sec",
+        "text": "Si {player} a enlevé ses chaussettes, {player} boit cul sec",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ],
+        "chainGroup": "chaussettes",
+        "chainOrder": 2
+    },
+    {
+        "slug": "nb-pays-ue",
+        "text": "{player}, quel est le nombre de pays dans l’Union européenne ? 3 si t'as faux",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "27"
+    },
+    {
+        "slug": "annee-lune",
+        "text": "{player}, quelle est l'année du premier pas de l’Homme sur la Lune ? 2 si t'as faux",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ],
+        "answer": "1969"
+    },
+    {
+        "slug": "rase-baltrou",
+        "text": "{player}, si tu t’es déjà rasé le baltrou, bois 1",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "post-bac",
+        "text": "{player}, donne autant de gorgées que d’années post-bac ; si tu t’es arrêté au bac c’est 5 ; si t’as pas le bac, quitte cette appli et va réviser chef",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "pas-bonhomme",
+        "text": "{player}, pas bonhomme : tout le monde boit 1 ; bonhomme : tu bois 5",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "echange-verre",
+        "text": "{player}, échange ton verre avec qui tu veux, vous devez tous les 2 cul sec",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "bataille-pouce",
+        "text": "{player}, bataille de pouce avec qui tu veux, le perdant boit 1",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "double-gorgees",
+        "text": "{player}, bois autant de gorgées que tu veux, {player2} en boira le double",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "moins-21",
+        "text": "{player}, si dans ton verre c’est un alcool à moins de 21%, tu bois 3",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "meilleures-conversations",
+        "text": "{player}, avec qui as-tu les meilleures conversations ? Vous distribuez ensemble 2 gorgées",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "choisit-theme",
+        "text": "{player}, choisis un thème ; le perdant boit 3",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "qui-president",
+        "text": "{player}, qui nommerais-tu président ? Il/Elle donne 2",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "qui-voyage",
+        "text": "{player}, qui appelles-tu en premier pour partir en voyage ? Vous buvez 2 ensemble",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "plus-longtemps",
+        "text": "{player}, le joueur que tu connais depuis le plus longtemps donne 1",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "dernier-parents",
+        "text": "{player}, qui présenterais-tu en dernier à tes parents ? Il/Elle boit 1",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "parles-le-moins",
+        "text": "{player}, la personne à qui tu parles le moins par message boit 3, allez hop",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "bagarre",
+        "text": "{player}, le joueur que t’appelles en premier pour une bagarre donne 3",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "mots-lyonnais",
+        "text": "{player}, cite 3 mots lyonnais en 5s, sinon bois 3",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "mots-marseillais",
+        "text": "{player}, cite 3 mots marseillais en 5s, sinon bois 3",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "mots-chti",
+        "text": "{player}, cite 3 mots du chnord en 5s, sinon bois 3",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "bu-semaine",
+        "text": "{player}, si tu as déjà bu cette semaine, donne 1 et bois un peu d’eau chef",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "blague-flop",
+        "text": "{player}, raconte une blague ; si elle flop, tu bois 2",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "enerve-le-plus",
+        "text": "{player}, qui t’énerve le plus ? Il/Elle donne 3 gorgées",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "cultureg-libre",
+        "text": "Bon, assez bu, un peu de culture G : {player}, pose une question de culture G de ton choix ; le premier à répondre ne boit pas, les autres boivent 1",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "deux-mensonges-une-verite",
+        "text": "{player}, raconte 2 mensonges 1 vérité ; ceux qui ne trouvent pas la vérité boivent 1",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "connait-prenoms",
+        "text": "{player}, si tu connais tous les prénoms de {player2}, {player2} boit 1 ; sinon tu bois 2",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "miroir",
+        "text": "{player}, miroir pour ce tour : toutes les gorgées que tu dois distribuer ce tour de table, tu les bois",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "peintres",
+        "text": "{player}, cite autant de peintres que tu peux et donne-les en gorgées",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "ecrivains-francais",
+        "text": "{player}, cite autant d’écrivains français que tu peux et donne-les en gorgées",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "acteurs-oscarises",
+        "text": "{player}, cite autant d’acteurs oscarisés que tu peux et donne-les en gorgées",
+        "level": 2,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "velo-anti-vol",
+        "text": "{player}, donne 3 manières de ne pas se faire voler son vélo en 10s, sinon bois 2",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "oui-non-interdit",
+        "text": "{player} n’a plus le droit de dire ni « oui » ni « non » jusqu’à la fin du tour ; 1 gorgée à chaque erreur",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "sports-licence",
+        "text": "{player}, distribue autant de gorgées que de sports que tu as pratiqués (sous licence)",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "enchainee-chaussettes-1",
+        "text": "{player}, enlève 2 vêtements ou cul sec (carte liée)",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ],
+        "chainGroup": "chaussettes2",
+        "chainOrder": 1
+    },
+    {
+        "slug": "enchainee-chaussettes-2",
+        "text": "Si {player} a enlevé ses chaussettes, {player} boit cul sec (carte liée)",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ],
+        "chainGroup": "chaussettes2",
+        "chainOrder": 2
+    },
+    {
+        "slug": "fais-quelque-chose",
+        "text": "{player}, fais quelque chose ; les joueurs qui n’y arrivent pas boivent 3",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "acteur-prefere",
+        "text": "{player}, quel est l’acteur préféré de {player2} ? Bois 1 si t’as faux",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "actrice-preferee",
+        "text": "{player}, quelle est l’actrice préférée de {player2} ? Bois 1 si t’as faux",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "anecdotes-2v-1f",
+        "text": "{player}, raconte 3 anecdotes (2 vraies, 1 fausse) ; ceux qui ne trouvent pas la fausse boivent 3",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "pompes-ou-gorgees",
+        "text": "{player}, 10 pompes ou 5 gorgées",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "signes-astro",
+        "text": "{player}, cite un à un les signes astrologiques des joueurs présents ; tu donnes 1 gorgée par bonne réponse",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    },
+    {
+        "slug": "trois-pays-b",
+        "text": "{player}, cite 3 pays qui commencent par la lettre « B » en 7s ; 1 gorgée par manque",
+        "level": 1,
+        "categories": [
+            "un_joueur"
+        ]
+    }
+]
