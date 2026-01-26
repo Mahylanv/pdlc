@@ -1,0 +1,506 @@
+[
+  {
+    "slug": "noms-de-fleurs",
+    "text": "Noms de fleurs à tour de rôle. Le premier qui n'a plus de noms de fleurs boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "especes-darbres",
+    "text": "Espèces d'arbres à tour de rôle. Le premier qui n'a plus d'espèces d'arbres boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "races-de-chiens",
+    "text": "Races de chiens à tour de rôle. Le premier qui n'a plus de races de chiens boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "drapeaux-blanc-rouge",
+    "text": "Drapeaux composés uniquement de blanc et rouge à tour de rôle. Le premier qui n'a plus de drapeaux blanc/rouge boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "drapeaux-avec-vert",
+    "text": "Drapeaux avec du vert à tour de rôle. Le premier qui n'a plus de drapeaux avec du vert boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "drapeaux-avec-jaune",
+    "text": "Drapeaux avec du jaune à tour de rôle. Le premier qui n'a plus de drapeaux avec du jaune boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "pieces-de-la-maison",
+    "text": "Pièces de la maison à tour de rôle. Le premier qui n'a plus de pièces de la maison boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "coc-troupes",
+    "text": "Troupes de Clash of Clans à tour de rôle. Le premier qui n'a plus de troupes de Clash of Clans boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "noms-danimes",
+    "text": "Noms d'animés à tour de rôle. Le premier qui n'a plus de noms d'animés boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "capitales-europeennes",
+    "text": "Capitales européennes à tour de rôle. Le premier qui n'a plus de capitales européennes boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "mots-en-arabe",
+    "text": "Mots en arabe à tour de rôle. Le premier qui n'a plus de mots en arabe boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "langages-de-dev",
+    "text": "Langages de programmation à tour de rôle. Le premier qui n'a plus de langages de dev boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "marques-de-biere",
+    "text": "Marques de bière à tour de rôle. Le premier qui n'a plus de marques de bière boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "simpsons-personnages",
+    "text": "Personnages des Simpsons à tour de rôle. Le premier qui n'a plus de personnages des Simpsons boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "bonjour-dans-une-langue",
+    "text": "Dire « Bonjour » dans une langue différente à tour de rôle. Le premier qui n'a plus de langues boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "pays-afrique",
+    "text": "Pays d'Afrique à tour de rôle. Le premier qui n'a plus de pays d'Afrique boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "actrices-x",
+    "text": "Noms d'actrices X à tour de rôle. Le premier qui n'a plus de noms d'actrices X boit 2. {player} commence.",
+    "level": 3,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "blagues-beauf",
+    "text": "Blagues beauf à tour de rôle. Le premier qui n'a plus de blagues beauf boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "blagues-nulles",
+    "text": "Blagues nulles à tour de rôle. Le premier qui n'a plus de blagues nulles boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "ballon-dor",
+    "text": "Vainqueurs du Ballon d'Or à tour de rôle. Le premier qui n'a plus de vainqueurs du Ballon d'Or boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "capitales-asie",
+    "text": "Capitales d'Asie à tour de rôle. Le premier qui n'a plus de capitales d'Asie boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "musiques-eminem",
+    "text": "Musiques d'Eminem à tour de rôle. Le premier qui n'a plus de musiques d'Eminem boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "medailles-olympiques-francophones",
+    "text": "Médailés olympiques francophones à tour de rôle. Le premier qui n'a plus de médaillés francophones boit 2. {player} commence.",
+    "level": 3,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "slogans-pubs",
+    "text": "Slogans publicitaires à tour de rôle. Le premier qui n'a plus de slogans pubs boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "compagnies-aeriennes",
+    "text": "Compagnies aériennes à tour de rôle. Le premier qui n'a plus de compagnies aériennes boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "entreprises-cac40",
+    "text": "Entreprises du CAC 40 à tour de rôle. Le premier qui n'a plus d'entreprises du CAC 40 boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "celebrites-chauves",
+    "text": "Célébrités chauves à tour de rôle. Le premier qui n'a plus de célébrités chauves boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "films-christopher-nolan",
+    "text": "Films de Christopher Nolan à tour de rôle. Le premier qui n'a plus de films de Nolan boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "pays-organisateurs-cdm",
+    "text": "Pays organisateurs d'une Coupe du monde (football) à tour de rôle. Le premier qui n'a plus de pays organisateurs boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "villes-organisatrices-jo",
+    "text": "Villes organisatrices des JO à tour de rôle. Le premier qui n'a plus de villes organisatrices des JO boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "os-du-corps-humain",
+    "text": "Os du corps humain à tour de rôle. Le premier qui n'a plus d'os du corps humain boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "joueurs-de-rugby",
+    "text": "Joueurs de rugby à tour de rôle. Le premier qui n'a plus de joueurs de rugby boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "types-de-maquillage",
+    "text": "Types de maquillage à tour de rôle. Le premier qui n'a plus de types de maquillage boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "acteurs-trices-x",
+    "text": "Acteurs/trices X à tour de rôle. Le premier qui n'a plus d'acteurs/trices X boit 2. {player} commence.",
+    "level": 3,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "matieres-plus-cheres-que-or",
+    "text": "Matières plus chères que l'or à tour de rôle. Le premier qui n'a plus de matières plus chères que l'or boit 2. {player} commence.",
+    "level": 3,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "noms-de-cryptos",
+    "text": "Noms de crypto-monnaies à tour de rôle. Le premier qui n'a plus de noms de cryptos boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "personnages-dans-friends",
+    "text": "Personnages dans Friends à tour de rôle. Le premier qui n'a plus de personnages de Friends boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "personnages-dans-cars",
+    "text": "Personnages dans Cars à tour de rôle. Le premier qui n'a plus de personnages de Cars boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "personnages-toy-story",
+    "text": "Personnages dans Toy Story à tour de rôle. Le premier qui n'a plus de personnages de Toy Story boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "personnages-shrek",
+    "text": "Personnages dans Shrek à tour de rôle. Le premier qui n'a plus de personnages de Shrek boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "personnages-sda",
+    "text": "Personnages dans Le Seigneur des Anneaux à tour de rôle. Le premier qui n'a plus de personnages du SDA boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "personnages-harry-potter",
+    "text": "Personnages dans Harry Potter à tour de rôle. Le premier qui n'a plus de personnages d'Harry Potter boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "titres-james-bond",
+    "text": "Titres de films James Bond à tour de rôle. Le premier qui n'a plus de titres de James Bond boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "films-di-caprio",
+    "text": "Films avec Leonardo DiCaprio à tour de rôle. Le premier qui n'a plus de films avec Leonardo DiCaprio boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "films-tarantino",
+    "text": "Films de Tarantino à tour de rôle. Le premier qui n'a plus de films de Tarantino boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "films-natalie-portman",
+    "text": "Films avec Natalie Portman à tour de rôle. Le premier qui n'a plus de films avec Natalie Portman boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "noms-basketteurs",
+    "text": "Noms de basketteurs à tour de rôle. Le premier qui n'a plus de noms de basketteurs boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "chanteuses-americaines",
+    "text": "Noms de chanteuses américaines à tour de rôle. Le premier qui n'a plus de chanteuses américaines boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "rimes-en-ette",
+    "text": "Rimes en « -ette » à tour de rôle. Le premier qui n'a plus de rimes en -ette boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "rimes-en-ute",
+    "text": "Rimes en « -ute » à tour de rôle. Le premier qui n'a plus de rimes en -ute boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "rimes-en-ere",
+    "text": "Rimes en « -ère » à tour de rôle. Le premier qui n'a plus de rimes en -ère boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "films-commencant-par-n",
+    "text": "Films commençant par N à tour de rôle. Le premier qui n'a plus de films commençant par N boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "jeux-video-commencant-par-f",
+    "text": "Jeux vidéo commençant par F à tour de rôle. Le premier qui n'a plus de jeux vidéo commençant par F boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "pays-avec-un-a",
+    "text": "Pays contenant la lettre « A » à tour de rôle. Le premier qui n'a plus de pays avec un A boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "musiques-michael-jackson",
+    "text": "Musiques de Michael Jackson à tour de rôle. Le premier qui n'a plus de musiques de Michael Jackson boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "pays-gp-f1",
+    "text": "Pays qui ont accueilli un Grand Prix de F1 à tour de rôle. Le premier qui n'a plus de pays hôtes de GP de F1 boit 2. {player} commence.",
+    "level": 3,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "clubs-foot-animaux-logo",
+    "text": "Clubs de foot avec un animal dans leur logo à tour de rôle. Le premier qui n'a plus de clubs avec animal boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "marques-de-montres",
+    "text": "Marques de montres à tour de rôle. Le premier qui n'a plus de marques de montres boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "noms-de-cocktails",
+    "text": "Noms de cocktails à tour de rôle. Le premier qui n'a plus de noms de cocktails boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "alcools-francais",
+    "text": "Alcools fabriqués en France à tour de rôle. Le premier qui n'a plus d'alcools français boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "one-piece-personnages",
+    "text": "Personnages de One Piece à tour de rôle. Le premier qui n'a plus de personnages de One Piece boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "clubs-gagnants-ldc",
+    "text": "Clubs ayant gagné la Ligue des champions à tour de rôle. Le premier qui n'a plus de clubs gagnants de la LDC boit 2. {player} commence.",
+    "level": 2,
+    "categories": [
+      "mort_subite"
+    ]
+  },
+  {
+    "slug": "noms-de-supermarches",
+    "text": "Noms de supermarchés à tour de rôle. Le premier qui n'a plus de noms de supermarchés boit 2. {player} commence.",
+    "level": 1,
+    "categories": [
+      "mort_subite"
+    ]
+  }
+]

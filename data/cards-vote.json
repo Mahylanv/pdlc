@@ -1,0 +1,314 @@
+[
+    {
+        "slug": "vote-plus-raciste",
+        "text": "Votez pour le joueur le plus raciste, il boira 4.",
+        "level": 2,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-pire-truc-mange",
+        "text": "Le pire truc mangé par chacun à tour de rôle, votez pour le pire : il boit 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-futur-ou-passe",
+        "text": "Aller dans le futur (haut) ou dans le passé (bas) ? (Tu choisis la date) Les perdants boivent 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-fatigue",
+        "text": "Votez tous le joueur le plus fatigué, il boira 3 gorgées pour une remise en forme.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-moins-sportif",
+        "text": "Votez tous le joueur le moins sportif, il boira 2 gorgées pour un peu de prot.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-grossophobe-ou-raciste",
+        "text": "Plutôt grossophobe (haut) ou raciste (bas) ? Les perdants boivent 1, ceux qui n’ont pas voté 3.",
+        "level": 2,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-repond-tard-aux-messages",
+        "text": "Votez pour le joueur qui met le plus de temps à répondre aux messages, il/elle boit 3.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-vin-rouge-ou-blanc",
+        "text": "Vin rouge (haut) ou vin blanc (bas) ? Les perdants boivent 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-paf-gout-puff-ou-puff-gout-paf",
+        "text": "Un peu de discussion : plutôt PAF GOÛT PUFF (haut) ou PUFF GOÛT PAF (bas) ? Les perdants boivent 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-interstellar-ou-inception",
+        "text": "Interstellar (haut) ou Inception (bas) ? Les perdants boivent 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-de-stories",
+        "text": "Votez pour celui qui met le plus de stories, il boira 2.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-pire-photo-de-profil",
+        "text": "Votez pour celui qui a la pire photo de profil, il boira 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-de-dossiers",
+        "text": "Votez pour celui qui a le plus de dossiers sur les autres ici, il boira 2.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-malchance-amour",
+        "text": "Votez pour le joueur le plus malchanceux en amour, il boira 2 pour oublier.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-moins-present-groupe",
+        "text": "Votez pour le joueur le moins présent dans le groupe, elle fait mal celle-là : il boira 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-bruyant-soiree",
+        "text": "Votez pour le joueur le plus bruyant en soirée, il boira 2 et devra faire silence 1 tour.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-charo",
+        "text": "Votez pour le plus charo de ce soir, il boira son bodycount en gorgées.",
+        "level": 2,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-tient-le-moins-alcool",
+        "text": "Votez pour celui qui tient le moins l'alcool, il boira 3 gorgées pour s'entraîner.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-soiree-posee-ou-enorme",
+        "text": "Plutôt soirée posée à 4 (haut) ou énorme grosse soirée à 40 (bas) ? Les perdants boivent 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-de-fautes-orthographe",
+        "text": "Votez pour celui qui fait le plus de fautes d’orthographe, il boira 2 (et révisera plus tard).",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-moins-bien-la-pression",
+        "text": "Votez pour celui qui tient le moins bien la pression (et je ne parle pas de bière), il boira 2.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-raconte-toujours-meme-anecdote",
+        "text": "Votez pour celui qui raconte toujours la même anecdote, il boira 2.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-lent-a-se-preparer",
+        "text": "Votez pour celui qui met le plus de temps à se préparer, il/elle boit 3.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-rat-du-groupe",
+        "text": "Votez pour le rat du groupe, il boira 3 gorgées parce qu'on est généreux nous.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-chie-le-plus",
+        "text": "Votez pour celui qui chie le plus, il boira 2 gorgées pour remplir son ventre.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-celibataire-eternel",
+        "text": "Votez pour le célibataire éternel, il boira 1 pour se consoler.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-accro-instagram-tiktok",
+        "text": "Votez pour celui qui est le plus accro à Instagram/TikTok, il boira 2.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-fraiche",
+        "text": "Votez pour la personne la plus fraîche, elle boira 3.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-ne-sait-pas-garder-secret",
+        "text": "Votez pour celui qui ne sait pas garder un secret, il boira 4.",
+        "level": 2,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-pourrait-tout-quitter",
+        "text": "Votez pour celui qui pourrait tout quitter et partir du jour au lendemain, il boira 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-serieux",
+        "text": "Votez pour le joueur le plus sérieux.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-par-sans-dire-au-revoir",
+        "text": "Votez pour celui qui part d’une soirée sans dire au revoir.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-se-plaint-le-plus",
+        "text": "Votez pour celui qui se plaint le plus, il boira 2 sans râler.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-change-souvent-davis",
+        "text": "Votez pour celui qui change le plus souvent d’avis, il boira 2.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-gros-fou-rire-pour-rien",
+        "text": "Votez pour celui qui a le plus gros fou rire pour rien, il boira 1 (et doit rire).",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-pires-imitations",
+        "text": "Votez pour celui qui fait les pires imitations, il boira 2 et doit en refaire une.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-boit-le-plus-vite",
+        "text": "Votez pour celui qui boit le plus vite, il boira 1 cul sec.",
+        "level": 2,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-organise",
+        "text": "Votez pour le joueur le plus organisé, il boira 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    },
+    {
+        "slug": "vote-plus-gros-stalker-reseaux",
+        "text": "Votez pour le plus gros “stalker” de réseaux, il boira 1.",
+        "level": 1,
+        "categories": [
+            "vote"
+        ]
+    }
+]

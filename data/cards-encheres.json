@@ -1,0 +1,106 @@
+[
+    {
+        "slug": "ench-pokemon-1gen-10s",
+        "text": "Enchères de gorgées : qui peut donner le plus de Pokémon 1ère génération en 10s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-clubs-ldc-15s",
+        "text": "Enchères de gorgées : qui peut donner le plus de clubs ayant gagné la LDC en 15s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-marques-vodka-15s",
+        "text": "Enchères de gorgées : qui peut donner le plus de marques de vodka en 15s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-sons-damso-10s",
+        "text": "Enchères de gorgées : qui peut donner le plus de sons de Damso en 10s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-couleurs-15s",
+        "text": "Enchères de gorgées : qui peut donner le plus de couleurs en 15s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-palindromes-10s",
+        "text": "Enchères de gorgées : qui peut donner le plus de palindromes en 10s entre {player} et {player2} ? Le perdant boit la mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-villes-allemandes-15s",
+        "text": "Enchères de gorgées : qui peut donner le plus de villes allemandes en 15s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-etats-usa-15s",
+        "text": "Enchères de gorgées : qui peut donner le plus d’États des États-Unis en 15s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-pays-afrique-20s",
+        "text": "Enchères de gorgées : qui peut donner le plus de pays d’Afrique en 20s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-capitales-europe-15s",
+        "text": "Enchères de gorgées : qui peut donner le plus de capitales européennes en 15s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-joueurs-edf-15s",
+        "text": "Enchères de gorgées : qui peut donner le plus de joueurs de l’équipe de France (toutes époques) en 15s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 2,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-instruments-musique-10s",
+        "text": "Enchères de gorgées : qui peut donner le plus d’instruments de musique en 10s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 1,
+        "categories": [
+            "encheres"
+        ]
+    },
+    {
+        "slug": "ench-villes-jo-20s",
+        "text": "Enchères de gorgées : qui peut donner le plus de villes ayant accueilli les JO en 20s entre {player} et {player2} ? Le gagnant annonce une mise ; s’il réussit, il distribue la moitié de sa mise.",
+        "level": 2,
+        "categories": [
+            "encheres"
+        ]
+    }
+]

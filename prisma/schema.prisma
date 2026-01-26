@@ -4,50 +4,52 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL") // pooled (runtime)
-  directUrl = env("DATABASE_URL_UNPOOLED") // direct (migrations)
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 model Game {
-  id        String     @id @default(cuid())
-  code      String     @unique
-  status    GameStatus @default(LOBBY)
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  id        String   @id @default(cuid())
+  code      String   @unique
   players   Player[]
   rounds    Round[]
-}
-
-enum GameStatus {
-  LOBBY
-  RUNNING
-  FINISHED
+  createdAt DateTime @default(now())
 }
 
 model Player {
-  id        String   @id @default(cuid())
-  name      String
-  order     Int
-  gameId    String
-  game      Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
-  createdAt DateTime @default(now())
+  id     String @id @default(cuid())
+  name   String
+  order  Int
+  gameId String
+  game   Game   @relation(fields: [gameId], references: [id], onDelete: Cascade)
 }
 
 model Card {
-  id        String   @id @default(cuid())
-  slug      String   @unique
-  text      String
-  level     Int      @default(1)
-  createdAt DateTime @default(now())
-  rounds    Round[] // relation inverse Round.card
+  id         String     @id @default(cuid())
+  slug       String     @unique
+  text       String
+  level      Int        @default(1)
+  answer     String?
+  answerNote String?
+  categories Category[]
+  rounds     Round[]
+  createdAt  DateTime   @default(now())
 }
 
 model Round {
   id        String   @id @default(cuid())
   gameId    String
   cardId    String
-  payload   Json
-  createdAt DateTime @default(now())
   game      Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
   card      Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  payload   Json
+  createdAt DateTime @default(now())
+}
+
+model Category {
+  id    String @id @default(cuid())
+  key   String @unique
+  name  String
+  color String
+  cards Card[]
 }

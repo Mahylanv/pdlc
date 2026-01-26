@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // pooled (runtime)
+  directUrl = env("DATABASE_URL_UNPOOLED") // direct (migrations)
+}
+
+model Game {
+  id        String     @id @default(cuid())
+  code      String     @unique
+  status    GameStatus @default(LOBBY)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  players   Player[]
+  rounds    Round[]
+}
+
+enum GameStatus {
+  LOBBY
+  RUNNING
+  FINISHED
+}
+
+model Player {
+  id        String   @id @default(cuid())
+  name      String
+  order     Int
+  gameId    String
+  game      Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Card {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  text      String
+  level     Int      @default(1)
+  createdAt DateTime @default(now())
+  rounds    Round[] // relation inverse Round.card
+}
+
+model Round {
+  id        String   @id @default(cuid())
+  gameId    String
+  cardId    String
+  payload   Json
+  createdAt DateTime @default(now())
+  game      Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  card      Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+}
