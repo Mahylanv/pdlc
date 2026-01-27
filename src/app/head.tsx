@@ -16,6 +16,7 @@ export default function Head() {
       <meta name="application-name" content="PDLC" />
       <meta name="apple-mobile-web-app-title" content="PDLC" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="format-detection" content="telephone=no, address=no, email=no" />
 
@@ -33,4 +34,3 @@ export default function Head() {
     </>
   );
 }
-
