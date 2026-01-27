@@ -7,21 +7,25 @@ import { loadPlayers, savePlayers, touchPlayers, clearPlayers } from "@/lib/play
 import { ALL_CATEGORIES, loadSelectedCats, saveSelectedCats, type CatKey } from "@/lib/categories";
 import CategoryMenu from "@/components/CategoryMenu";
 import { Settings } from "lucide-react";
+import { loadRounds, saveRounds } from "@/lib/settings";
 
 export default function Home() {
   const [players, setPlayers] = useState<string[]>([]);
   const [name, setName] = useState("");
   const [selectedCats, setSelectedCats] = useState<CatKey[]>([]);
+  const [rounds, setRounds] = useState(30);
   const [showCats, setShowCats] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const didInitPlayers = useRef(false);
   const didInitCats = useRef(false);
+  const didInitRounds = useRef(false);
   const router = useRouter();
 
   useEffect(() => {
     setPlayers(loadPlayers());
     touchPlayers();
     setSelectedCats(loadSelectedCats()); // CatKey[]
+    setRounds(loadRounds());
   }, []);
 
   useEffect(() => {
@@ -32,6 +36,10 @@ export default function Home() {
     if (!didInitCats.current) { didInitCats.current = true; return; }
     saveSelectedCats(selectedCats);
   }, [selectedCats]);
+  useEffect(() => {
+    if (!didInitRounds.current) { didInitRounds.current = true; return; }
+    saveRounds(rounds);
+  }, [rounds]);
 
   const canStart = useMemo(() => players.length >= 1, [players]);
 
@@ -100,6 +108,8 @@ export default function Home() {
                 onToggle={toggleCat}
                 onAll={selectAll}
                 onNone={selectNone}
+                rounds={rounds}
+                onRoundsChange={setRounds}
                 onClose={() => setShowCats(false)}
               />
             )}
