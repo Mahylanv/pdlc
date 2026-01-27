@@ -1,0 +1,122 @@
+[
+    {
+        "slug": "emoji-cars",
+        "text": "{player} fait deviner le film « Cars » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-titanic",
+        "text": "{player} fait deviner le film « Titanic » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-star-wars",
+        "text": "{player} fait deviner le film « Star Wars » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-spider-man",
+        "text": "{player} fait deviner le film « Spider-Man » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-soupe-aux-choux",
+        "text": "{player} fait deviner le film « La Soupe aux choux » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-le-parrain",
+        "text": "{player} fait deviner le film « Le Parrain » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-rocky",
+        "text": "{player} fait deviner le film « Rocky » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-nemo",
+        "text": "{player} fait deviner le film « Nemo » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-le-mans-66",
+        "text": "{player} fait deviner le film « Le Mans 66 » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-planete-des-singes",
+        "text": "{player} fait deviner le film « La Planète des singes » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-retour-a-la-case-depart",
+        "text": "{player} fait deviner le film « Retour à la case départ » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-pulp-fiction",
+        "text": "{player} fait deviner le film « Pulp Fiction » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-mars-attacks",
+        "text": "{player} fait deviner le film « Mars Attacks! » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-django-unchained",
+        "text": "{player} fait deviner le film « Django Unchained » à {player2} en 3 emojis. Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    },
+    {
+        "slug": "emoji-la-la-land",
+        "text": "{player} fait deviner le film « La La Land » à {player2} en 3 emojis (deux joueurs différents). Si {player2} trouve du premier coup, vous distribuez 4 ; sinon vous buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "emoji_film"
+        ]
+    }
+]

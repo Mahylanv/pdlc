@@ -1,0 +1,322 @@
+[
+    {
+        "slug": "taxi-cul-sec",
+        "text": "Ceux qui ont fait taxi ce soir distribuent un cul sec à l’un de leurs passagers.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "mois-de-naissance",
+        "text": "Chacun boit autant de gorgées que son mois de naissance.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "amendes-distribuent-2",
+        "text": "Ceux qui ont déjà pris des amendes distribuent 2 gorgées.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "dernier-resto",
+        "text": "Le dernier joueur allé au resto boit 1 gorgée (le riche).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "pignouf-2-jours",
+        "text": "Ceux qui se sont pignouf ces 2 derniers jours boivent 2.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "jamais-dormi-ici",
+        "text": "Ceux n’ayant jamais dormi ici boivent 1.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "heure-tardive",
+        "text": "S’il est plus d’1 heure du matin, chacun boit 1 par heure de dépassement (ex. 3h = 2 gorgées).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "lieu-public-18",
+        "text": "Ceux qui ont déjà 🔞 dans un lieu public boivent 2 (on veut l’histoire).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "pas-vu-cars",
+        "text": "Ceux qui n’ont pas vu Cars boivent cul sec. KACHOW.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "pas-abonnes-pdlc",
+        "text": "Ceux qui ne sont pas abonnés aux PDLC sur Spotify boivent cul sec.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "filles-ou-garcons",
+        "text": "Les filles boivent 2. S’il n’y en a pas, les mecs boivent 4 (de toute façon on est mieux entre nous).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "pied-derriere-tete",
+        "text": "Ceux qui arrivent à mettre leur pied derrière la tête distribuent 3 gorgées.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "aucun-jeu-telephone",
+        "text": "Ceux qui n’ont aucun jeu sur leur téléphone boivent 1 (la vie est tellement morose).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "jamais-sorti-europe",
+        "text": "Ceux qui ne sont jamais sortis d’Europe distribuent 2 gorgées.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "incrustes-soiree",
+        "text": "Les incrustés à la soirée distribuent aux personnes qui les ont incrustés (1 gorgée chacun).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "rien-donne-encore",
+        "text": "Ceux qui n’ont encore rien distribué distribuent 4 gorgées.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "fumeurs-nb-clopes",
+        "text": "Les fumeurs boivent leur nombre de clopes en gorgées (aie).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "tatouages",
+        "text": "Ceux tatoués boivent leur nombre de tatouages en gorgées.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "celib-donnent-aux-couples",
+        "text": "Tous les célibataires distribuent 1 gorgée aux gens en couple (s’il y en a).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "vacances-3-mois",
+        "text": "Ceux qui sont partis en vacances ces 3 derniers mois boivent 1 (les riches).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "blablacar",
+        "text": "Ceux qui ont déjà été dans un Blablacar distribuent 1 gorgée.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "jamais-stade-foot",
+        "text": "Ceux qui ne sont jamais allés au stade voir du foot boivent 2.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "biere-cul-sec-vrai-alcool",
+        "text": "Ceux qui sont à la bière finissent leur bière cul sec et passent à un vrai alcool.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "torse-nu",
+        "text": "Ceux qui sont torses nus boivent autant de gorgées qu’il y a de joueurs.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "chaussettes-depareillees",
+        "text": "Ceux qui ont des chaussettes dépareillées boivent cul sec.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "vetement-troue",
+        "text": "Ceux qui portent un vêtement troué distribuent 3 gorgées.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "retourne-avec-ex",
+        "text": "Ceux qui sont déjà retournés avec leur ex boivent 5 (on ne ravale pas son vomi).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "mois-sans-alcool",
+        "text": "Ceux qui ont déjà fait un mois sans alcool depuis leurs 18 ans boivent 2 (ce ne sera pas ce mois-ci !).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "vacances-entre-eux",
+        "text": "Ceux qui sont déjà partis en vacances entre eux ici distribuent 1 gorgée à chaque personne avec qui ils sont partis.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "road-trip",
+        "text": "Ceux qui ont déjà fait un road-trip boivent 1.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "commande-3-fois-semaine",
+        "text": "Ceux qui ont déjà commandé à manger plus de 3 fois en une semaine boivent 2.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "derniere-toilette",
+        "text": "La dernière personne qui est allée aux toilettes boit 1 gorgée.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "numero-de-rue",
+        "text": "Le premier à trouver le numéro de la rue (sauf l’hôte) distribue le premier chiffre en gorgées (ex. 51 → 5 gorgées).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "nb-animaux",
+        "text": "Chacun distribue en gorgées le nombre d’animaux qu’il possède.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "bitcoin-proche",
+        "text": "Le joueur le plus proche de la valeur du Bitcoin ne boit pas ; les autres boivent 1.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "numero-07",
+        "text": "Ceux qui ont un numéro de téléphone en 07 boivent 2 (ici c’est 06).",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "pas-numero-player",
+        "text": "Ceux qui n’ont pas le numéro de {player} boivent 3 gorgées.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "story-24h",
+        "text": "Ceux qui ont posté une story dans les 24 dernières heures boivent 2.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "lunettes-lentilles",
+        "text": "Ceux qui portent des lunettes ou des lentilles boivent 1.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    },
+    {
+        "slug": "travaille-aujourdhui",
+        "text": "Ceux qui ont travaillé aujourd’hui distribuent 3 gorgées.",
+        "level": 1,
+        "categories": [
+            "tous"
+        ]
+    }
+]

@@ -1,0 +1,282 @@
+[
+    {
+        "slug": "capitale-somalie",
+        "text": "Le premier à trouver distribue 1 : La capitale de la Somalie.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Mogadiscio"
+    },
+    {
+        "slug": "capitale-burkina-faso",
+        "text": "Le premier à trouver distribue 1 : La capitale du Burkina Faso.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Ouagadougou"
+    },
+    {
+        "slug": "capitale-macedoine-nord",
+        "text": "Le premier à trouver distribue 1 : La capitale de la Macédoine du Nord.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Skopje"
+    },
+    {
+        "slug": "population-vietnam-5m",
+        "text": "Le premier à trouver distribue 1 : Le nombre d'habitants au Vietnam à 5 M près.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ]
+    },
+    {
+        "slug": "8e-pays-plus-peuple",
+        "text": "Le premier à trouver distribue 1 : Le 8e pays le plus peuplé.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Bangladesh"
+    },
+    {
+        "slug": "chute-mur-berlin-date",
+        "text": "Le premier à trouver distribue 1 : La date de la chute du mur de Berlin.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "9 novembre 1989"
+    },
+    {
+        "slug": "9e-pays-plus-grand",
+        "text": "Le premier à trouver distribue 1 : Le 9e pays le plus grand.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Kazakhstan"
+    },
+    {
+        "slug": "plus-grande-mer",
+        "text": "Le premier à trouver distribue 1 : La mer la plus grande.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Mer des Philippines"
+    },
+    {
+        "slug": "fosse-plus-profonde-300m",
+        "text": "Le premier à trouver distribue 1 : La profondeur marine la plus profonde à 300 m près.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Environ 10 900 m (fosse des Mariannes)"
+    },
+    {
+        "slug": "hauteur-tour-eiffel-9m",
+        "text": "Le premier à trouver distribue 1 : La hauteur de la tour Eiffel à 9 m près.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Environ 330 m"
+    },
+    {
+        "slug": "prix-iphone-16",
+        "text": "Le premier à trouver distribue 1 : Le prix de l’iPhone 16.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ]
+    },
+    {
+        "slug": "plus-vieil-alcool",
+        "text": "Le premier à trouver distribue 1 : Le plus vieil alcool du monde.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ]
+    },
+    {
+        "slug": "animal-plus-rapide-terre",
+        "text": "Le premier à trouver distribue 1 : L’animal le plus rapide sur terre.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Le guépard"
+    },
+    {
+        "slug": "lettre-aleatoire",
+        "text": "Le premier à trouver distribue 1 : Une lettre aléatoire de l’alphabet (désignez-la avant de chercher).",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ]
+    },
+    {
+        "slug": "6e-planete-proche-soleil",
+        "text": "Le premier à trouver distribue 1 : La 6e planète la plus proche du Soleil.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Saturne"
+    },
+    {
+        "slug": "sommet-monde-5m",
+        "text": "Le premier à trouver distribue 1 : Le plus haut sommet du monde à 5 m près.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Everest (8 848 m)"
+    },
+    {
+        "slug": "distance-terre-lune-20000km",
+        "text": "Le premier à trouver distribue 1 : La distance Terre–Lune à 20 000 km près.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Environ 384 400 km"
+    },
+    {
+        "slug": "plus-grande-planete",
+        "text": "Le premier à trouver distribue 1 : La planète la plus grande du système solaire.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Jupiter"
+    },
+    {
+        "slug": "temperature-corps-03c",
+        "text": "Le premier à trouver distribue 1 : La température du corps humain (°C) à 0,3 °C près.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "37 °C"
+    },
+    {
+        "slug": "nb-dents-adulte",
+        "text": "Le premier à trouver distribue 1 : Le nombre de dents définitives chez l’adulte.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "32"
+    },
+    {
+        "slug": "gaz-majoritaire-atmosphere",
+        "text": "Le premier à trouver distribue 1 : Le gaz le plus présent dans l’atmosphère terrestre.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Azote (N₂)"
+    },
+    {
+        "slug": "grossesse-semaines",
+        "text": "Le premier à trouver distribue 1 : La durée moyenne de la grossesse humaine en semaines.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Environ 40 semaines"
+    },
+    {
+        "slug": "metal-liquide-ambiant",
+        "text": "Le premier à trouver distribue 1 : Le métal liquide à température ambiante le plus connu.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Mercure"
+    },
+    {
+        "slug": "annee-sortie-titanic",
+        "text": "Le premier à trouver distribue 1 : L’année de sortie du film Titanic.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "1997"
+    },
+    {
+        "slug": "realisateur-jurassic-park",
+        "text": "Le premier à trouver distribue 1 : Le réalisateur de Jurassic Park.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Steven Spielberg"
+    },
+    {
+        "slug": "prenom-chanteur-queen",
+        "text": "Le premier à trouver distribue 1 : Le prénom du chanteur du groupe Queen.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "Freddie"
+    },
+    {
+        "slug": "rg-nadal",
+        "text": "Le premier à trouver distribue 1 : Le nombre de Roland-Garros remportés par Rafael Nadal.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ]
+    },
+    {
+        "slug": "hexagone-cotes",
+        "text": "Le premier à trouver distribue 1 : Le nombre de côtés d’un hexagone.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "6"
+    },
+    {
+        "slug": "nb-lettres-hippopotame",
+        "text": "Le premier à trouver distribue 1 : Le nombre de lettres dans le mot « hippopotame ».",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ],
+        "answer": "11"
+    },
+    {
+        "slug": "around-the-world-compte",
+        "text": "Le premier à trouver distribue 1 : Le nombre de fois où « around the world » est répété dans la musique des Daft Punk.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ]
+    },
+    {
+        "slug": "pays-frontaliers-france",
+        "text": "Le premier à trouver distribue 1 : Le nombre de pays frontaliers de la France.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ]
+    },
+    {
+        "slug": "fuseaux-horaires-france",
+        "text": "Le premier à trouver distribue 1 : Le nombre de fuseaux horaires en France.",
+        "level": 1,
+        "categories": [
+            "culture_g"
+        ]
+    }
+]

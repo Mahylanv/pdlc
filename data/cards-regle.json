@@ -1,0 +1,375 @@
+[
+    {
+        "slug": "main-gauche",
+        "text": "À partir de maintenant, tout le monde doit boire de la main gauche. Chaque gorgée de la mauvaise main = +1 gorgée.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "pas-de-telephone",
+        "text": "Le prochain qui touche à son téléphone distribue 2 gorgées (sauf le maître du jeu).",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "appel-cul-sec",
+        "text": "Le premier qui appelle quelqu’un ET qui obtient une réponse distribue 1 cul sec.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "biere-interdite-minuit",
+        "text": "S’il est minuit passé, la bière est interdite.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "premier-cul-sec-donne-1",
+        "text": "Le premier à faire cul sec donne 1 gorgée.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "titre-ou-artiste",
+        "text": "Le premier joueur à donner le titre ou l’artiste de la musique actuelle donne 1. S’il n’y a pas de musique, tout le monde boit 1.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "chifoutease-voisin-droite",
+        "text": "Chifoutease à tour de rôle avec son voisin de droite.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "action-ou-verite",
+        "text": "Action ou vérité à tour de rôle. 5 gorgées en cas de refus.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "eau-sauf-player",
+        "text": "Tout le monde a le droit à un verre d’eau sauf {player}.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "chou-fleur-duel",
+        "text": "Chou-fleur entre {player} et {player2}. Le perdant boit 1.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "prenom-paul",
+        "text": "{player} et {player2}, donnez en même temps une célébrité dont le prénom est Paul. Le plus connu l’emporte, l’autre boit 1.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "boit-a-chaque-tour",
+        "text": "{player} boit à chaque tour tant que son nom ne réapparaît pas.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "bouclier",
+        "text": "{player} a un bouclier : il/elle peut ne pas boire une fois dans cette partie.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "un-chiffre-chacun",
+        "text": "Un chiffre chacun à tour de rôle associé à un thème (ex : 4 éléments, 5 océans, 7 continents) dans l’ordre.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "se-leve-boit-1",
+        "text": "À partir de maintenant, chaque fois que quelqu’un se lève, il/elle boit 1 avant de se rasseoir.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "retard-cul-sec",
+        "text": "Le dernier arrivé prend son cul sec de retard (même si déjà pris).",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "alliance",
+        "text": "{player} fait alliance avec {player2} : chaque fois que l’un donne des gorgées, l’autre peut aussi les redistribuer à quelqu’un d’autre.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "renverse-cul-sec",
+        "text": "Si quelqu’un renverse ne serait-ce qu’une goutte, il/elle boit cul sec et essuie.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "changement-musique",
+        "text": "La prochaine fois qu’une musique change, tout le monde boit 1. Ceux qui ne s’en rendent pas compte boivent 2.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "age-pair-impair",
+        "text": "Si ton âge est pair, tu bois 2 ; sinon tu bois 1.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "couple-liens",
+        "text": "{player} est en couple avec {player2} pour cette partie : quand l’un boit, l’autre aussi.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "rote-ou-pete",
+        "text": "Le premier joueur à roter ou péter donne 5.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "premier-cul-sec-donne-2x2",
+        "text": "Le premier joueur à cul sec peut donner 2 à deux joueurs différents.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "snap-meilleurs-amis",
+        "text": "Si {player} n’est pas dans les 8 meilleurs amis Snap de {player2}, {player} boit 4 ; sinon {player} donne 3.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "chanter-mot",
+        "text": "{player} donne un mot. Le premier joueur à CHANTER une chanson avec ce mot distribue 2.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "ne-regarde-plus-player",
+        "text": "Plus personne ne regarde {player} jusqu’à la fin du jeu sous peine d’1 gorgée.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "multiplication",
+        "text": "Multiplication : les gorgées qui te sont liées doublent à chaque tour (x1, x2, x4) pendant 3 tours. Ça marche pour celles que tu donnes et reçois.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "verre-de-droite",
+        "text": "Tout le monde prend le verre du joueur de droite.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "photo-nu-ou-pls",
+        "text": "Montre une photo où on te voit nu ou en PLS, sinon cul sec.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "bisous-cou",
+        "text": "{player} fait un bisou dans le cou de {player2}. Si l’un refuse, c’est 5 gorgées.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "prochain-fumeur-cul-sec",
+        "text": "Le prochain joueur à fumer boit cul sec (même si la partie est finie).",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "barbichette",
+        "text": "Je te tiens par la barbichette entre {player} et {player2}. Le perdant boit 2.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "echange-sous-vetement",
+        "text": "{player} échange un sous-vêtement avec {player2}, ou cul sec pour celui/celle qui refuse.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "stop-contre-cul-sec",
+        "text": "{player} ferme les yeux et dit STOP quand il/elle veut. Si {player2} finit son verre avant le STOP, {player} boit cul sec.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "meme-chiffre",
+        "text": "{player} et {player2}, pensez à un chiffre (0–9) et dites-le à 3. Si c’est le même, distribuez 4 ; sinon buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "meme-couleur",
+        "text": "{player} et {player2}, pensez à une couleur et dites-la à 3. Si c’est la même, distribuez 4 ; sinon buvez 2 chacun.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "batterie",
+        "text": "Le joueur avec le moins de batterie boit le dernier chiffre de son pourcentage en gorgées.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "bataille-regard",
+        "text": "Bataille de regard entre {player} et {player2}. Le gagnant distribue 3 gorgées à qui il/elle veut.",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "joker",
+        "text": "{player}, tu peux donner un joker à qui tu veux (la personne pourra refuser une pénalité une fois dans cette partie).",
+        "level": 1,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "devine-5-mots",
+        "text": "{player}, fais deviner ces 5 mots à {player2} en moins de 15s, sans même champ lexical : étanche, grenouille, pelle, ampoule, selle. Sinon buvez 5 tous les deux.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ]
+    },
+    {
+        "slug": "rouge-ou-noir",
+        "text": "{player}, Rouge ou Noir ? Mise un nombre de gorgées. Si tu gagnes tu donnes, sinon tu bois.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ],
+        "chainGroup": "rouge_noir",
+        "chainOrder": 1
+    },
+    {
+        "slug": "rouge",
+        "text": "Rouge ! (applique le résultat de la mise).",
+        "level": 1,
+        "categories": [
+            "regle"
+        ],
+        "chainGroup": "rouge_noir",
+        "chainOrder": 2,
+        "answerNote": "Fond rouge foncé conseillé."
+    },
+    {
+        "slug": "noir",
+        "text": "Noir ! (applique le résultat de la mise).",
+        "level": 1,
+        "categories": [
+            "regle"
+        ],
+        "chainGroup": "rouge_noir",
+        "chainOrder": 2,
+        "answerNote": "Fond noir conseillé."
+    },
+    {
+        "slug": "verre-commun",
+        "text": "Placez un verre vide. À chaque cul sec, le buveur peut ajouter quelque chose dans ce verre.",
+        "level": 2,
+        "categories": [
+            "regle"
+        ],
+        "chainGroup": "verre_mix",
+        "chainOrder": 1
+    },
+    {
+        "slug": "boit-verre-commun",
+        "text": "{player} boit le verre des culs secs (seulement si la règle du verre commun est déjà en jeu).",
+        "level": 2,
+        "categories": [
+            "regle"
+        ],
+        "chainGroup": "verre_mix",
+        "chainOrder": 2,
+        "answerNote": "Ne tirer cette carte que si 'verre-commun' a été jouée auparavant."
+    }
+]
