@@ -10,10 +10,8 @@ export default function SwRegister() {
         .catch((e) => console.error("SW registration failed:", e));
     }
     // Best-effort landscape lock (works mostly in installed PWA/fullscreen)
-    const orientation = screen.orientation as ScreenOrientation | undefined;
-    if (orientation?.lock) {
-      orientation.lock("landscape").catch(() => {});
-    }
+    const orientation = (screen as unknown as { orientation?: { lock?: (o: string) => Promise<void> } }).orientation;
+    if (orientation?.lock) orientation.lock("landscape").catch(() => {});
   }, []);
   return null;
 }
