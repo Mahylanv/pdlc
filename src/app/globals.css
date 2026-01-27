@@ -72,10 +72,10 @@ body {
 
 @media (orientation: portrait) {
   .portrait-lock .app-shell {
-    display: block;
+    display: none;
   }
   .portrait-lock .orientation-guard {
-    display: none;
+    display: flex;
   }
 }
 
