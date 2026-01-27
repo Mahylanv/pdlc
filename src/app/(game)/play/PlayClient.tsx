@@ -4,6 +4,7 @@ import { Suspense, useEffect, useRef, useState, type CSSProperties } from "react
 import { useSearchParams, useRouter } from "next/navigation";
 import { touchPlayers, savePlayers } from "@/lib/playerStore";
 import { loadSelectedCats, saveSelectedCats, type CatKey } from "@/lib/categories";
+import { loadRounds } from "@/lib/settings";
 
 type Player = { id: string; name: string; order: number };
 type Cat = { key: string; name: string; color: string };
@@ -52,6 +53,7 @@ function PlayInner() {
   const [progress, setProgress] = useState(INITIAL_PROGRESS);
   const [loading, setLoading] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [rounds] = useState(() => loadRounds());
 
   // Drawer joueurs
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -117,7 +119,7 @@ function PlayInner() {
     const res = await fetch("/api/game/next", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ code, categories: selectedCats }),
+      body: JSON.stringify({ code, categories: selectedCats, rounds }),
     });
     return res.json() as Promise<NextPayload & { ok?: boolean }>;
   }

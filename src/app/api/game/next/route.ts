@@ -3,7 +3,8 @@ import { prisma } from "@/lib/db";
 import { Prisma } from "@prisma/client";
 import { renderCardText } from "@/lib/prompts";
 
-const MAX_ROUNDS = 30;
+const DEFAULT_MAX_ROUNDS = 30;
+const ALLOWED_ROUNDS = new Set([30, 50, 75, 100]);
 
 function errMsg(e: unknown) {
   return e instanceof Error ? e.message : String(e);
@@ -14,6 +15,8 @@ export async function POST(req: Request) {
     const body = await req.json().catch(() => ({}));
     const code = String((body as any)?.code || "").trim().toUpperCase();
     const cats = Array.isArray((body as any)?.categories) ? (body as any).categories as string[] : [];
+    const requestedRounds = Number((body as any)?.rounds ?? DEFAULT_MAX_ROUNDS);
+    const maxRounds = ALLOWED_ROUNDS.has(requestedRounds) ? requestedRounds : DEFAULT_MAX_ROUNDS;
     if (!code) return NextResponse.json({ ok: false, error: "Missing code" }, { status: 400 });
 
     const game = await prisma.game.findUnique({
@@ -24,8 +27,8 @@ export async function POST(req: Request) {
     if (game.players.length === 0) return NextResponse.json({ ok: false, error: "Add at least one player" }, { status: 400 });
 
     const playedCount = await prisma.round.count({ where: { gameId: game.id } });
-    if (playedCount >= MAX_ROUNDS) {
-      return NextResponse.json({ ok: true, finished: true, played: playedCount, total: MAX_ROUNDS, remaining: 0 });
+    if (playedCount >= maxRounds) {
+      return NextResponse.json({ ok: true, finished: true, played: playedCount, total: maxRounds, remaining: 0 });
     }
 
     const playedChains = await prisma.round.findMany({
@@ -68,7 +71,7 @@ export async function POST(req: Request) {
 
     const cardId = rows[0]?.id;
     if (!cardId) {
-      return NextResponse.json({ ok: true, finished: true, played: playedCount, total: MAX_ROUNDS, remaining: 0 });
+      return NextResponse.json({ ok: true, finished: true, played: playedCount, total: maxRounds, remaining: 0 });
     }
 
     const card = await prisma.card.findUnique({
@@ -76,7 +79,7 @@ export async function POST(req: Request) {
       include: { categories: true },
     });
     if (!card) {
-      return NextResponse.json({ ok: true, finished: true, played: playedCount, total: MAX_ROUNDS, remaining: 0 });
+      return NextResponse.json({ ok: true, finished: true, played: playedCount, total: maxRounds, remaining: 0 });
     }
 
     const rendered = renderCardText(card.text, game.players);
@@ -112,7 +115,7 @@ export async function POST(req: Request) {
     });
 
     const newPlayed = playedCount + 1;
-    const remainingByLimit = Math.max(0, MAX_ROUNDS - newPlayed);
+    const remainingByLimit = Math.max(0, maxRounds - newPlayed);
     const finished = remainingByLimit === 0;
     const remaining = finished ? 0 : remainingByLimit;
 
@@ -120,7 +123,7 @@ export async function POST(req: Request) {
       ok: true,
       finished,
       played: newPlayed,
-      total: MAX_ROUNDS,
+      total: maxRounds,
       remaining,
       card: {
         id: card.id,
