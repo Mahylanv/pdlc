@@ -302,7 +302,7 @@ function PlayInner() {
 
   return (
     <main
-      className="game-stage flex h-dvh items-center justify-center p-6 text-white select-none relative"
+      className="game-stage flex h-dvh items-center justify-center p-0 md:p-6 text-white select-none relative"
       style={{ "--accent": bg } as CSSProperties}
       onClick={nextCard}
       role="button"

@@ -83,7 +83,7 @@ export default function Home() {
   }
 
   return (
-    <main className="home-stage flex h-dvh items-center justify-center text-white relative p-6">
+    <main className="home-stage flex h-dvh items-center justify-center text-white relative p-0 md:p-6">
       <div className="game-content w-full max-w-2xl">
         <div className="home-panel rounded-3xl p-6">
           <h1 className="text-5xl font-display">PDLC</h1>
