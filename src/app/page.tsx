@@ -15,6 +15,7 @@ export default function Home() {
   const [selectedCats, setSelectedCats] = useState<CatKey[]>([]);
   const [rounds, setRounds] = useState(30);
   const [showCats, setShowCats] = useState(false);
+  const [starting, setStarting] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const didInitPlayers = useRef(false);
   const didInitCats = useRef(false);
@@ -66,7 +67,8 @@ export default function Home() {
     setSelectedCats([]);
   }
   async function startGame() {
-    if (!canStart) return;
+    if (!canStart || starting) return;
+    setStarting(true);
     try {
       const res = await fetch("/api/game/create", {
         method: "POST",
@@ -76,9 +78,39 @@ export default function Home() {
       const json = await res.json();
       if (!res.ok || !json?.game?.code) throw new Error(json?.error || "create failed");
       touchPlayers();
-      router.push(`/play?code=${encodeURIComponent(json.game.code)}`);
+      const code = String(json.game.code);
+      try {
+        const resNext = await fetch("/api/game/next", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ code, categories: selectedCats, rounds }),
+        });
+        const jsonNext = await resNext.json();
+        if (jsonNext?.ok) {
+          sessionStorage.setItem(
+            "pdlc_preload_v1",
+            JSON.stringify({
+              [code]: {
+                cardText: jsonNext.card?.text ?? "",
+                cats: jsonNext.card?.categories ?? [],
+                answer: jsonNext.card?.answer ?? null,
+                answerNote: jsonNext.card?.answerNote ?? null,
+                progress: {
+                  played: jsonNext.played ?? 1,
+                  total: jsonNext.total ?? rounds,
+                  remaining: jsonNext.remaining ?? Math.max(0, (jsonNext.total ?? rounds) - (jsonNext.played ?? 1)),
+                  finished: Boolean(jsonNext.finished),
+                },
+              },
+            })
+          );
+        }
+      } catch {}
+      router.push(`/play?code=${encodeURIComponent(code)}`);
     } catch {
       alert("Erreur lors de la création de la partie.");
+    } finally {
+      setStarting(false);
     }
   }
 
@@ -147,11 +179,11 @@ export default function Home() {
 
           <div className="mt-6 flex flex-col sm:flex-row items-center gap-3">
             <button
-              disabled={!canStart}
+              disabled={!canStart || starting}
               onClick={startGame}
               className="home-cta rounded-2xl px-6 py-3 font-semibold disabled:cursor-not-allowed"
             >
-              Lancer la partie
+              {starting ? "Préparation..." : "Lancer la partie"}
             </button>
             <button
               onClick={() => { clearPlayers(); setPlayers([]); }}

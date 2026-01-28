@@ -319,7 +319,7 @@ function PlayInner() {
       </div>
       <div className="glow-ring" aria-hidden="true" />
 
-      <div className="game-content w-full max-w-4xl text-center">
+      <div className="game-content w-full max-w-2xl text-center">
         <div className="flex items-center justify-between mb-3 text-sm text-white/90 uppercase tracking-widest">
           <div
             className="flex-1 min-w-0 flex gap-2 overflow-x-auto whitespace-nowrap pb-1 pr-2"
