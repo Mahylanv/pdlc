@@ -71,7 +71,9 @@ export async function POST(req: Request) {
          AND COALESCE(c."chainOrder", 0) <= 1`,
       [game.id]
     );
-    const activeChainGroups = new Set<string>(chainRes.rows.map(r => r.chainGroup as string));
+    const activeChainGroups = new Set<string>(
+      chainRes.rows.map((r: { chainGroup: string }) => r.chainGroup)
+    );
 
     const results: any[] = [];
     const catsArr = cats.length ? cats : null;
