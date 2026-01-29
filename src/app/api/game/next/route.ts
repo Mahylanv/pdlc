@@ -25,6 +25,9 @@ export async function POST(req: Request) {
     });
     if (!game) return NextResponse.json({ ok: false, error: "Game not found" }, { status: 404 });
     if (game.players.length === 0) return NextResponse.json({ ok: false, error: "Add at least one player" }, { status: 400 });
+    if (game.isDraft) {
+      await prisma.game.update({ where: { id: game.id }, data: { isDraft: false } });
+    }
 
     const playedCount = await prisma.round.count({ where: { gameId: game.id } });
     if (playedCount >= maxRounds) {

@@ -13,6 +13,8 @@ model Game {
   code      String   @unique
   players   Player[]
   rounds    Round[]
+  isDraft   Boolean  @default(false)
+  draftKey  String?
   createdAt DateTime @default(now())
 }
 

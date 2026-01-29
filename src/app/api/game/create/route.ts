@@ -23,6 +23,8 @@ export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
     const inputPlayers: { name: string }[] = Array.isArray((body as any)?.players) ? (body as any).players : [];
+    const isDraft = Boolean((body as any)?.draft);
+    const draftKey = isDraft ? String((body as any)?.draftKey || "") : null;
     const code =
       (typeof (body as any)?.code === "string" && (body as any).code.trim().toUpperCase()) ||
       (await uniqueCode());
@@ -31,6 +33,8 @@ export async function POST(req: Request) {
       data: {
         code,
         players: { create: inputPlayers.map((p, idx) => ({ name: p.name.slice(0, 40), order: idx })) },
+        isDraft,
+        draftKey,
       },
       include: { players: true },
     });
