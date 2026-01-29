@@ -123,7 +123,13 @@ export async function POST(req: Request) {
          WHERE cc."A" = $1`,
         [card.id]
       );
-      const categories = catRes.rows.map((c) => ({ key: c.key, name: c.name, color: c.color }));
+      const categories = catRes.rows.map(
+        (c: { key: string; name: string; color: string }) => ({
+          key: c.key,
+          name: c.name,
+          color: c.color,
+        })
+      );
 
       const rendered = renderCardText(card.text, playersRes.rows);
 
@@ -135,8 +141,8 @@ export async function POST(req: Request) {
            WHERE "chainGroup" = $1 AND "chainOrder" > 1`,
           [card.chainGroup]
         );
-        if (optsRes.rowCount > 0) {
-          const options = optsRes.rows;
+        if ((optsRes.rowCount ?? 0) > 0) {
+          const options = optsRes.rows as { text: string; answerNote?: string | null; chainOrder?: number | null }[];
           const pick = card.chainGroup === "chaussettes"
             ? options.sort((a, b) => (a.chainOrder ?? 0) - (b.chainOrder ?? 0))[0]
             : options[Math.floor(Math.random() * options.length)];
@@ -157,7 +163,7 @@ export async function POST(req: Request) {
           {
             cardText: card.text,
             rendered,
-            players: playersRes.rows.map(p => ({ id: p.id, name: p.name })),
+            players: (playersRes.rows as { id: string; name: string }[]).map((p) => ({ id: p.id, name: p.name })),
             categories,
           },
         ]

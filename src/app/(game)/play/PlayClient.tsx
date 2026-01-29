@@ -366,7 +366,7 @@ function PlayInner() {
               </span>
             ))}
           </div>
-          <span>{progress.played}/{progress.total}</span>
+          {/* <span>{progress.played}/{progress.total}</span> */}
         </div>
 
         <div className="glass-card card-float rounded-3xl p-7 min-h-36 mb-4 text-xl leading-relaxed">
