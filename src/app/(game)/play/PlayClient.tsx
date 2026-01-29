@@ -24,7 +24,7 @@ type NextPayload = {
 
 // PRELOAD first card between navigations
 const PRELOAD_KEY = "pdlc_preload_v1";
-type PreloadMap = Record<string, { cardText: string; progress: { played:number; total:number; remaining:number; finished:boolean }, cats: Cat[], answer?: string|null, answerNote?: string|null }>;
+type PreloadMap = Record<string, { cardText: string; progress: { played:number; total:number; remaining:number; finished:boolean }, cats: Cat[], answer?: string|null, answerNote?: string|null, prefetched?: NextPayload[] }>;
 function setPreload(code: string, data: PreloadMap[string]) { try {
   const raw = sessionStorage.getItem(PRELOAD_KEY);
   const map: PreloadMap = raw ? JSON.parse(raw) : {};
@@ -112,20 +112,31 @@ function PlayInner() {
   }
 
   function desiredPrefetchCount(played: number) {
-    return played <= 1 ? 1 : 4;
+    return played <= 1 ? 6 : 12;
   }
 
   async function fetchNextCard() {
-    const res = await fetch("/api/game/next", {
+    const res = await fetch("/api/game/next/batch", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ code, categories: selectedCats, rounds }),
+      body: JSON.stringify({ code, categories: selectedCats, rounds, batchSize: 1 }),
     });
-    return res.json() as Promise<NextPayload & { ok?: boolean }>;
+    const json = await res.json();
+    const first = (json?.cards ?? [])[0];
+    return first as NextPayload & { ok?: boolean };
+  }
+
+  async function fetchNextBatch(batchSize: number) {
+    const res = await fetch("/api/game/next/batch", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ code, categories: selectedCats, rounds, batchSize }),
+    });
+    return res.json() as Promise<{ ok?: boolean; cards?: NextPayload[] }>;
   }
 
   function applyNext(json: NextPayload & { ok?: boolean }) {
-    if (!json?.ok) return null;
+    if (!json || (!json.card && json.ok === false)) return null;
     touchPlayers();
     const played = json.played ?? progress.played;
     const total = json.total ?? progress.total;
@@ -145,12 +156,14 @@ function PlayInner() {
     if (prefetching.current || finished) return;
     prefetching.current = true;
     try {
-      while (prefetchedRef.current.length < target) {
-        const json = await fetchNextCard();
-        if (!json?.ok) break;
-        prefetchedRef.current = [...prefetchedRef.current, json];
+      const missing = Math.max(0, target - prefetchedRef.current.length);
+      if (missing === 0) return;
+      const batch = Math.min(missing, 8);
+      const json = await fetchNextBatch(batch);
+      const list = (json?.cards ?? []).filter((c) => c && c.card);
+      if (list.length) {
+        prefetchedRef.current = [...prefetchedRef.current, ...list];
         setPrefetched(prefetchedRef.current);
-        if (json.finished) break;
       }
     } finally {
       prefetching.current = false;
@@ -246,7 +259,7 @@ function PlayInner() {
     setPrefetched([]);
     prefetchedRef.current = [];
     const preload = getPreload(code);
-    if (preload) {
+    if (preload && preload.cardText) {
       setCard(preload.cardText);
       setCats(preload.cats || []);
       setAnswer(preload.answer ?? null);
@@ -254,18 +267,34 @@ function PlayInner() {
       setShowAnswer(false);
       setProgress(preload.progress);
       setShowEnd(preload.progress.finished);
-      void prefetchToTarget(
-        desiredPrefetchCount(preload.progress.played),
-        preload.progress.finished
-      );
+      if (preload.prefetched?.length) {
+        prefetchedRef.current = preload.prefetched;
+        setPrefetched(preload.prefetched);
+      } else {
+        void prefetchToTarget(
+          desiredPrefetchCount(preload.progress.played),
+          preload.progress.finished
+        );
+      }
       clearPreload(code);
       fetchPlayers();
       return;
+    }
+    if (preload) {
+      clearPreload(code);
     }
     resetState();
     nextCard();
     fetchPlayers();
   }, [code]);
+
+  useEffect(() => {
+    if (!code || progress.finished) return;
+    const interval = setInterval(() => {
+      void prefetchToTarget(desiredPrefetchCount(progress.played), progress.finished);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [code, progress.played, progress.finished]);
 
   useEffect(() => {
     playersRef.current = players;
@@ -319,7 +348,7 @@ function PlayInner() {
       </div>
       <div className="glow-ring" aria-hidden="true" />
 
-      <div className="game-content w-full max-w-2xl text-center">
+      <div className="game-content w-full max-w-xl text-center">
         <div className="flex items-center justify-between mb-3 text-sm text-white/90 uppercase tracking-widest">
           <div
             className="flex-1 min-w-0 flex gap-2 overflow-x-auto whitespace-nowrap pb-1 pr-2"

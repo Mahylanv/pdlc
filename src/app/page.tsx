@@ -16,6 +16,9 @@ export default function Home() {
   const [rounds, setRounds] = useState(30);
   const [showCats, setShowCats] = useState(false);
   const [starting, setStarting] = useState(false);
+  const [draftCode, setDraftCode] = useState<string | null>(null);
+  const draftRef = useRef<string | null>(null);
+  const draftKeyRef = useRef<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
   const didInitPlayers = useRef(false);
   const didInitCats = useRef(false);
@@ -70,42 +73,97 @@ export default function Home() {
     if (!canStart || starting) return;
     setStarting(true);
     try {
-      const res = await fetch("/api/game/create", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ players: players.map((name) => ({ name })) }),
-      });
-      const json = await res.json();
-      if (!res.ok || !json?.game?.code) throw new Error(json?.error || "create failed");
-      touchPlayers();
-      const code = String(json.game.code);
-      try {
-        const resNext = await fetch("/api/game/next", {
+      let code = draftRef.current;
+      let preloaded = false;
+
+      if (code) {
+        try {
+          const resNext = await fetch("/api/game/next/batch", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ code, categories: selectedCats, rounds, batchSize: 8 }),
+          });
+          if (resNext.ok) {
+            const jsonNext = await resNext.json();
+            const list = (jsonNext?.cards ?? []).filter((c: any) => c?.card?.text);
+            if (list.length) {
+              const first = list[0];
+              const rest = list.slice(1);
+              sessionStorage.setItem(
+                "pdlc_preload_v1",
+                JSON.stringify({
+                  [code]: {
+                    cardText: first.card?.text ?? "",
+                    cats: first.card?.categories ?? [],
+                    answer: first.card?.answer ?? null,
+                    answerNote: first.card?.answerNote ?? null,
+                    progress: {
+                      played: first.played ?? 1,
+                      total: first.total ?? rounds,
+                      remaining: first.remaining ?? Math.max(0, (first.total ?? rounds) - (first.played ?? 1)),
+                      finished: Boolean(first.finished),
+                    },
+                    prefetched: rest,
+                  },
+                })
+              );
+              preloaded = true;
+            }
+          }
+        } catch {}
+      }
+
+      if (!code || !preloaded) {
+        const res = await fetch("/api/game/create", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ code, categories: selectedCats, rounds }),
+          body: JSON.stringify({
+            players: players.map((name) => ({ name })),
+            draft: true,
+            draftKey: draftKeyRef.current,
+          }),
         });
-        const jsonNext = await resNext.json();
-        if (jsonNext?.ok) {
-          sessionStorage.setItem(
-            "pdlc_preload_v1",
-            JSON.stringify({
-              [code]: {
-                cardText: jsonNext.card?.text ?? "",
-                cats: jsonNext.card?.categories ?? [],
-                answer: jsonNext.card?.answer ?? null,
-                answerNote: jsonNext.card?.answerNote ?? null,
-                progress: {
-                  played: jsonNext.played ?? 1,
-                  total: jsonNext.total ?? rounds,
-                  remaining: jsonNext.remaining ?? Math.max(0, (jsonNext.total ?? rounds) - (jsonNext.played ?? 1)),
-                  finished: Boolean(jsonNext.finished),
+        const json = await res.json();
+        if (!res.ok || !json?.game?.code) throw new Error(json?.error || "create failed");
+        code = String(json.game.code);
+
+        try {
+          const resNext = await fetch("/api/game/next/batch", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ code, categories: selectedCats, rounds, batchSize: 8 }),
+          });
+          const jsonNext = await resNext.json();
+          const list = (jsonNext?.cards ?? []).filter((c: any) => c?.card?.text);
+          if (list.length) {
+            const first = list[0];
+            const rest = list.slice(1);
+            sessionStorage.setItem(
+              "pdlc_preload_v1",
+              JSON.stringify({
+                [code]: {
+                  cardText: first.card?.text ?? "",
+                  cats: first.card?.categories ?? [],
+                  answer: first.card?.answer ?? null,
+                  answerNote: first.card?.answerNote ?? null,
+                  progress: {
+                    played: first.played ?? 1,
+                    total: first.total ?? rounds,
+                    remaining: first.remaining ?? Math.max(0, (first.total ?? rounds) - (first.played ?? 1)),
+                    finished: Boolean(first.finished),
+                  },
+                  prefetched: rest,
                 },
-              },
-            })
-          );
-        }
-      } catch {}
+              })
+            );
+          }
+        } catch {}
+      }
+
+      touchPlayers();
+      setDraftCode(null);
+      draftRef.current = null;
+      draftKeyRef.current = "";
       router.push(`/play?code=${encodeURIComponent(code)}`);
     } catch {
       alert("Erreur lors de la création de la partie.");
@@ -114,9 +172,85 @@ export default function Home() {
     }
   }
 
+  useEffect(() => {
+    if (!canStart || starting) return;
+    const key = JSON.stringify({
+      players,
+      cats: selectedCats,
+      rounds,
+    });
+    if (key === draftKeyRef.current) return;
+    draftKeyRef.current = key;
+
+    const timer = setTimeout(async () => {
+      try {
+        if (draftRef.current) {
+          await fetch("/api/game/delete", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ code: draftRef.current }),
+          });
+        }
+      } catch {}
+
+      try {
+        await fetch("/api/game/draft/cleanup", { method: "POST" });
+      } catch {}
+
+      try {
+        const res = await fetch("/api/game/create", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            players: players.map((name) => ({ name })),
+            draft: true,
+            draftKey: key,
+          }),
+        });
+        const json = await res.json();
+        if (!res.ok || !json?.game?.code) return;
+        const code = String(json.game.code);
+        draftRef.current = code;
+        setDraftCode(code);
+
+        const resNext = await fetch("/api/game/next/batch", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ code, categories: selectedCats, rounds, batchSize: 8 }),
+        });
+        const jsonNext = await resNext.json();
+        const list = (jsonNext?.cards ?? []).filter((c: any) => c?.card?.text);
+        if (list.length) {
+          const first = list[0];
+          const rest = list.slice(1);
+          sessionStorage.setItem(
+            "pdlc_preload_v1",
+            JSON.stringify({
+              [code]: {
+                cardText: first.card?.text ?? "",
+                cats: first.card?.categories ?? [],
+                answer: first.card?.answer ?? null,
+                answerNote: first.card?.answerNote ?? null,
+                progress: {
+                  played: first.played ?? 1,
+                  total: first.total ?? rounds,
+                  remaining: first.remaining ?? Math.max(0, (first.total ?? rounds) - (first.played ?? 1)),
+                  finished: Boolean(first.finished),
+                },
+                prefetched: rest,
+              },
+            })
+          );
+        }
+      } catch {}
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [players, selectedCats, rounds, canStart, starting]);
+
   return (
     <main className="home-stage flex h-dvh items-center justify-center text-white relative p-0 md:p-6">
-      <div className="game-content w-full max-w-2xl">
+      <div className="game-content w-full max-w-xl">
         <div className="home-panel rounded-3xl p-6">
           <h1 className="text-5xl font-display">PDLC</h1>
           <p className="text-white/80 mb-4 leading-relaxed">
@@ -177,7 +311,7 @@ export default function Home() {
 
           <PlayerChips players={players} onRemove={removePlayer} />
 
-          <div className="mt-6 flex flex-col sm:flex-row items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-3 mr-2.5 mt-2">
             <button
               disabled={!canStart || starting}
               onClick={startGame}
