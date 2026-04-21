@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 function msg(e: unknown) { return e instanceof Error ? e.message : String(e); }
 
 export async function GET(req: Request) {
@@ -15,7 +18,10 @@ export async function GET(req: Request) {
     });
     if (!game) return NextResponse.json({ ok: false, error: "Game not found" }, { status: 404 });
 
-    return NextResponse.json({ ok: true, players: game.players });
+    return NextResponse.json(
+      { ok: true, players: game.players },
+      { headers: { "Cache-Control": "no-store, no-cache, must-revalidate" } }
+    );
   } catch (e) {
     return NextResponse.json({ ok: false, error: msg(e) }, { status: 400 });
   }
