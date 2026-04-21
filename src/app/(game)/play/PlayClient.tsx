@@ -91,8 +91,22 @@ function PlayInner() {
       body: JSON.stringify({ code, name }),
     });
     const json = await res.json();
-    if (json?.ok) { setNewName(""); await fetchPlayers(); touchPlayers(); }
-    else alert(json?.error || "Erreur ajout joueur");
+    if (json?.ok) {
+      setNewName("");
+      const newPlayer = json.player as Player | undefined;
+      if (newPlayer) {
+        setPlayers((prev) => {
+          if (prev.some((p) => p.id === newPlayer.id)) return prev;
+          const next = [...prev, newPlayer].sort((a, b) => a.order - b.order);
+          savePlayers(next.map((p) => p.name));
+          return next;
+        });
+      }
+      touchPlayers();
+      void fetchPlayers();
+    } else {
+      alert(json?.error || "Erreur ajout joueur");
+    }
   }
 
   async function removePlayer(id: string) {
@@ -103,8 +117,17 @@ function PlayInner() {
       body: JSON.stringify({ code, id }),
     });
     const json = await res.json();
-    if (json?.ok) { await fetchPlayers(); touchPlayers(); }
-    else alert(json?.error || "Erreur suppression joueur");
+    if (json?.ok) {
+      setPlayers((prev) => {
+        const next = prev.filter((p) => p.id !== id);
+        savePlayers(next.map((p) => p.name));
+        return next;
+      });
+      touchPlayers();
+      void fetchPlayers();
+    } else {
+      alert(json?.error || "Erreur suppression joueur");
+    }
   }
 
   function desiredPrefetchCount(played: number) {
