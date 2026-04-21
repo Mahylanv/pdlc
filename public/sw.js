@@ -1,5 +1,5 @@
 // Très simple SW: met en cache l'app shell
-const CACHE = "pdlc-v1";
+const CACHE = "pdlc-v2";
 const ASSETS = [
   "/", // page home
 ];
@@ -22,17 +22,29 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
-  // Cache-first pour les GET
-  if (request.method === "GET") {
-    event.respondWith(
-      caches.match(request).then((cached) =>
-        cached ||
-        fetch(request).then((resp) => {
-          const copy = resp.clone();
-          caches.open(CACHE).then((c) => c.put(request, copy)).catch(()=>{});
-          return resp;
-        }).catch(() => cached) // offline fallback
-      )
-    );
+  if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+
+  // Jamais cacher les API: toujours réseau, sans fallback cache
+  if (url.pathname.startsWith("/api/")) {
+    return;
   }
+
+  // Jamais cacher les pages dynamiques de jeu (évite les états figés)
+  if (url.pathname.startsWith("/play")) {
+    return;
+  }
+
+  // Cache-first pour le reste (app shell, assets statiques)
+  event.respondWith(
+    caches.match(request).then((cached) =>
+      cached ||
+      fetch(request).then((resp) => {
+        const copy = resp.clone();
+        caches.open(CACHE).then((c) => c.put(request, copy)).catch(()=>{});
+        return resp;
+      }).catch(() => cached)
+    )
+  );
 });
