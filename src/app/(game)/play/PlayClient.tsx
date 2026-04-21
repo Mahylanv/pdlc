@@ -25,11 +25,6 @@ type NextPayload = {
 // PRELOAD first card between navigations
 const PRELOAD_KEY = "pdlc_preload_v1";
 type PreloadMap = Record<string, { cardText: string; progress: { played:number; total:number; remaining:number; finished:boolean }, cats: Cat[], answer?: string|null, answerNote?: string|null, prefetched?: NextPayload[] }>;
-function setPreload(code: string, data: PreloadMap[string]) { try {
-  const raw = sessionStorage.getItem(PRELOAD_KEY);
-  const map: PreloadMap = raw ? JSON.parse(raw) : {};
-  map[code] = data; sessionStorage.setItem(PRELOAD_KEY, JSON.stringify(map));
-} catch {} }
 function getPreload(code: string) { try {
   const raw = sessionStorage.getItem(PRELOAD_KEY); if (!raw) return;
   const map: PreloadMap = JSON.parse(raw); return map[code];
@@ -62,6 +57,7 @@ function PlayInner() {
 
   // Overlay fin
   const [showEnd, setShowEnd] = useState(false);
+  const [replaying, setReplaying] = useState(false);
 
   const tapBlock = useRef<number>(0);
   const playersRef = useRef<Player[]>([]);
@@ -204,6 +200,8 @@ function PlayInner() {
   }
 
   async function replay() {
+    if (replaying) return;
+    setReplaying(true);
     try {
       const resCreate = await fetch("/api/game/create", {
         method: "POST",
@@ -212,30 +210,11 @@ function PlayInner() {
       });
       const jsonCreate = await resCreate.json();
       const newCode = jsonCreate?.game?.code as string | undefined;
-      if (!newCode) return;
-
-      // Précharge 1ère carte avec catégories sélectionnées
-      const resNext = await fetch("/api/game/next", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ code: newCode, categories: selectedCats }),
-      });
-      const jsonNext = await resNext.json();
-      if (jsonNext?.ok) {
-        const played = jsonNext.played ?? 1;
-        const total = jsonNext.total ?? 30;
-        const remaining = jsonNext.remaining ?? Math.max(0, total - played);
-        setPreload(newCode, {
-          cardText: jsonNext.card?.text ?? "",
-          cats: jsonNext.card?.categories ?? [],
-          answer: jsonNext.card?.answer ?? null,
-          answerNote: jsonNext.card?.answerNote ?? null,
-          progress: { played, total, remaining, finished: Boolean(jsonNext.finished) },
-        });
-      }
-
+      if (!newCode) { setReplaying(false); return; }
       router.replace(`/play?code=${encodeURIComponent(newCode)}`);
-    } catch {}
+    } catch {
+      setReplaying(false);
+    }
   }
 
   async function quitGame() {
@@ -256,6 +235,7 @@ function PlayInner() {
 
   useEffect(() => {
     if (!code) return;
+    setReplaying(false);
     setPrefetched([]);
     prefetchedRef.current = [];
     const preload = getPreload(code);
@@ -284,8 +264,19 @@ function PlayInner() {
       clearPreload(code);
     }
     resetState();
-    nextCard();
     fetchPlayers();
+    (async () => {
+      setLoading(true);
+      try {
+        const json = await fetchNextCard();
+        const applied = applyNext(json);
+        if (applied) {
+          void prefetchToTarget(desiredPrefetchCount(applied.played), applied.finished);
+        }
+      } finally {
+        setLoading(false);
+      }
+    })();
   }, [code]);
 
   useEffect(() => {
@@ -473,9 +464,10 @@ function PlayInner() {
             <div className="flex gap-3 justify-center">
               <button
                 onClick={(e) => { e.stopPropagation(); replay(); }}
-                className="rounded-xl px-5 py-3 font-semibold bg-white text-black hover:bg-zinc-200"
+                disabled={replaying}
+                className={`rounded-xl px-5 py-3 font-semibold ${replaying ? "bg-white/40 text-black/60 cursor-not-allowed" : "bg-white text-black hover:bg-zinc-200"}`}
               >
-                Rejouer
+                {replaying ? "Lancement..." : "Rejouer"}
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); quitGame(); }}

@@ -69,51 +69,35 @@ export default function Home() {
   function selectNone() {
     setSelectedCats([]);
   }
+  function hasValidPreload(code: string): boolean {
+    try {
+      const raw = sessionStorage.getItem("pdlc_preload_v1");
+      if (!raw) return false;
+      const map = JSON.parse(raw);
+      return Boolean(map?.[code]?.cardText);
+    } catch {
+      return false;
+    }
+  }
+
   async function startGame() {
     if (!canStart || starting) return;
     setStarting(true);
     try {
       let code = draftRef.current;
-      let preloaded = false;
 
-      if (code) {
-        try {
-          const resNext = await fetch("/api/game/next/batch", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({ code, categories: selectedCats, rounds, batchSize: 8 }),
-          });
-          if (resNext.ok) {
-            const jsonNext = await resNext.json();
-            const list = (jsonNext?.cards ?? []).filter((c: any) => c?.card?.text);
-            if (list.length) {
-              const first = list[0];
-              const rest = list.slice(1);
-              sessionStorage.setItem(
-                "pdlc_preload_v1",
-                JSON.stringify({
-                  [code]: {
-                    cardText: first.card?.text ?? "",
-                    cats: first.card?.categories ?? [],
-                    answer: first.card?.answer ?? null,
-                    answerNote: first.card?.answerNote ?? null,
-                    progress: {
-                      played: first.played ?? 1,
-                      total: first.total ?? rounds,
-                      remaining: first.remaining ?? Math.max(0, (first.total ?? rounds) - (first.played ?? 1)),
-                      finished: Boolean(first.finished),
-                    },
-                    prefetched: rest,
-                  },
-                })
-              );
-              preloaded = true;
-            }
-          }
-        } catch {}
+      // Fast path: draft ready + preload already written by draft useEffect
+      if (code && hasValidPreload(code)) {
+        touchPlayers();
+        setDraftCode(null);
+        draftRef.current = null;
+        draftKeyRef.current = "";
+        router.push(`/play?code=${encodeURIComponent(code)}`);
+        return;
       }
 
-      if (!code || !preloaded) {
+      // Fallback: create game if needed, then fetch just the first card
+      if (!code) {
         const res = await fetch("/api/game/create", {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -126,39 +110,37 @@ export default function Home() {
         const json = await res.json();
         if (!res.ok || !json?.game?.code) throw new Error(json?.error || "create failed");
         code = String(json.game.code);
-
-        try {
-          const resNext = await fetch("/api/game/next/batch", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({ code, categories: selectedCats, rounds, batchSize: 8 }),
-          });
-          const jsonNext = await resNext.json();
-          const list = (jsonNext?.cards ?? []).filter((c: any) => c?.card?.text);
-          if (list.length) {
-            const first = list[0];
-            const rest = list.slice(1);
-            sessionStorage.setItem(
-              "pdlc_preload_v1",
-              JSON.stringify({
-                [code]: {
-                  cardText: first.card?.text ?? "",
-                  cats: first.card?.categories ?? [],
-                  answer: first.card?.answer ?? null,
-                  answerNote: first.card?.answerNote ?? null,
-                  progress: {
-                    played: first.played ?? 1,
-                    total: first.total ?? rounds,
-                    remaining: first.remaining ?? Math.max(0, (first.total ?? rounds) - (first.played ?? 1)),
-                    finished: Boolean(first.finished),
-                  },
-                  prefetched: rest,
-                },
-              })
-            );
-          }
-        } catch {}
       }
+
+      try {
+        const resNext = await fetch("/api/game/next/batch", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ code, categories: selectedCats, rounds, batchSize: 1 }),
+        });
+        const jsonNext = await resNext.json();
+        const list = (jsonNext?.cards ?? []).filter((c: any) => c?.card?.text);
+        if (list.length) {
+          const first = list[0];
+          sessionStorage.setItem(
+            "pdlc_preload_v1",
+            JSON.stringify({
+              [code]: {
+                cardText: first.card?.text ?? "",
+                cats: first.card?.categories ?? [],
+                answer: first.card?.answer ?? null,
+                answerNote: first.card?.answerNote ?? null,
+                progress: {
+                  played: first.played ?? 1,
+                  total: first.total ?? rounds,
+                  remaining: first.remaining ?? Math.max(0, (first.total ?? rounds) - (first.played ?? 1)),
+                  finished: Boolean(first.finished),
+                },
+              },
+            })
+          );
+        }
+      } catch {}
 
       touchPlayers();
       setDraftCode(null);
